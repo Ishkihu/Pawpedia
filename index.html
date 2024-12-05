@@ -31,29 +31,53 @@
     </header>
 
     <section id="about" class="about section-hidden">
-
         <div class="about-intro">
             <h1>Welcome to PawPedia</h1>
-            <p>At PawPedia, we are dedicated to providing you with the best information about your pets. We are a team of pet lovers who are passionate about helping you take care of your pets. We provide you with the best information about your pets, including their diet, health, and grooming. We also have a directory of pet services, including veterinarians, pet stores, and pet sitters. 
-            We also have a gallery of cute pet pictures </p>
+            <p>At PawPedia, we are dedicated to providing you with the best information about your pets. We are a team of pet lovers who are passionate about helping you take care of your pets. We provide you with the best information about your pets, including their diet, health, and grooming. We also have a directory of pet services, including veterinarians, pet stores, and pet sitters. We also have a gallery of cute pet pictures.</p>
         </div>
-
-        <div class="jv-left">
-            <img src="" alt="">
-            <h3>John Victor Esquejo</h3>
-            <p>Our Lead Technician in the Organization</p>
-
-        </div>
-
-        <div class="kiel-right">
-            <img src="" alt="">
-            <h3>Kiel Andrew Esta</h3>
-            <p>Our Lead Designer in the Organization</p>
+    
+        <div class="about-grid">
+            <div class="jv-left">
+                <img src="" alt="John Victor Esquejo">
+                <h3>John Victor Esquejo</h3>
+                <p>Our Lead Technician in the Organization</p>
+            </div>
+    
+            <div class="kiel-right">
+                <img src="" alt="Kiel Andrew Esta">
+                <h3>Kiel Andrew Esta</h3>
+                <p>Our Lead Designer in the Organization</p>
+            </div>
         </div>
     </section>
 
-    <section id="directory" class="Directory section-hidden">
-
+    <section id="directory" class="directory section-hidden">
+        <h2>Pet Categories</h2>
+        <div class="card-container">
+            <div class="card" onclick="openModal('dog')">Dog</div>
+            <div class="card" onclick="openModal('cat')">Cat</div>
+            <div class="card" onclick="openModal('bird')">Bird</div>
+            <div class="card" onclick="openModal('reptile')">Reptile</div>
+            <div class="card" onclick="openModal('fish')">Fish</div>
+        </div>
+    
+        <!-- Modal Structure -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-grid">
+                    <div class="breed-list">
+                        <ul id="breed-list">
+                            <!-- List of breeds will be dynamically inserted here -->
+                        </ul>
+                    </div>
+                    <div class="breed-details">
+                        <img id="breed-image" src="" alt="Breed Image">
+                        <p id="breed-description">Select a breed to see the details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
     
     <section id="gallery" class="Gallery section-hidden">
