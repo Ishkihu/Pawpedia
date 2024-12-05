@@ -30,11 +30,11 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 6rem; /* Adjust the gap as needed */
+    margin-right: 6rem;
 }
 
 nav ul li:last-child {
-    margin-right: 0; /* Remove the margin from the last item */
+    margin-right: 0;
 }
 
 nav ul li a, .header a {
@@ -64,9 +64,9 @@ nav ul li a, .header a {
 }
 
 .jv-left img, .kiel-right img {
-    width: 100px; /* Adjust the size as needed */
+    width: 100px;
     height: auto;
-    border-radius: 50%; /* Optional: to make the images circular */
+    border-radius: 50%; 
 }
 
 footer {
@@ -75,9 +75,6 @@ footer {
     text-align: center;
     padding: 0.02rem;
 }
-
-
-
 
 .directory {
     text-align: center;
@@ -105,7 +102,7 @@ footer {
 }
 
 .modal {
-    display: none; /* Hidden by default */
+    display: none;
     position: fixed;
     z-index: 1;
     left: 0;

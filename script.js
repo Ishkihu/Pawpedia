@@ -1,5 +1,4 @@
 function openModal(category) {
-    // Populate the breed list based on the category
     const breeds = {
         dog: ['Labrador', 'Poodle', 'Bulldog'],
         cat: ['Persian', 'Siamese', 'Maine Coon'],
@@ -25,7 +24,6 @@ function closeModal() {
 }
 
 function showBreedDetails(breed) {
-    // Update the breed details based on the selected breed
     const breedDetails = {
         Labrador: {
             image: 'path/to/labrador.jpg',
@@ -35,7 +33,6 @@ function showBreedDetails(breed) {
             image: 'path/to/poodle.jpg',
             description: 'Poodles are intelligent and active dogs.'
         },
-        // Add more breed details here
     };
 
     document.getElementById('breed-image').src = breedDetails[breed].image;
