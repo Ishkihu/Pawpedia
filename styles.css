@@ -76,7 +76,7 @@ footer {
     padding: 0.02rem;
 }
 
-.directory {
+.library {
     text-align: center;
 }
 
@@ -121,6 +121,7 @@ footer {
     border: 1px solid #888;
     width: 80%;
     max-width: 800px;
+    border-radius: 8px; /* Add border-radius to modal content */
 }
 
 .close {
@@ -146,6 +147,41 @@ footer {
 .breed-list {
     overflow-y: auto;
     max-height: 400px;
+}
+
+.breed-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.breed-list li {
+    margin: 0.5rem 0;
+}
+
+.breed-list button {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px; /* Add border-radius to buttons */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.breed-list button:hover {
+    background-color: #e0e0e0;
+}
+
+.breed-list button:focus {
+    background-color: #d0d0d0;
+    outline: none;
+}
+
+.breed-list button:active {
+    transform: scale(0.98);
 }
 
 .breed-details {
