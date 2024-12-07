@@ -223,37 +223,44 @@ a {
 
 #library {
     text-align: center;
-    padding: 5rem 10rem;
+    padding: 5rem 5rem;
     height: auto;
+}
+
+#library h2 {
+    margin-bottom: 2rem;
 }
 
 .card-container {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .card {
-    background-color: #f0f0f0;
-    padding: 1rem;
+    background-color: #ff6b6b;
     border-radius: 8px;
     cursor: pointer;
-    width: 380px;
-    height: 380px;
+    width: 280px;
+    height: 350px;
     text-align: center;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s; 
     position: relative;
+    overflow: hidden; 
 }
 
 .card:hover {
-    background-color: #e0e0e0;
+    background-color: #ffffff;
+    transform: scale(1.05);
+
 }
 
 .card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
     transition: opacity 0.3s;
 }
 
@@ -261,7 +268,10 @@ a {
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     opacity: 0;
+    transition: opacity 0.3s; 
 }
 
 .card:hover .card-img-hover {
@@ -276,7 +286,28 @@ a {
     color: white;
     font-size: 18px;
     font-weight: bold;
-    text-shadow: 1px 1px 2px black;
+    max-width: 280px;
+    z-index: 2; 
+}
+
+.background {
+    background-color: #ff6b6b;
+    height: 50px;
+    width: 95%; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1; 
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%); 
+    transition: background-color 0.3s; 
+}
+
+.card:hover .background {
+    background-color: #ffffff; 
+}
+
+.card:hover p{
+    color: #ff6b6b;
 }
 
 .modal {
@@ -374,4 +405,127 @@ footer {
 
 footer a {
     color: #ff6b6b;
+}
+
+
+
+/* CONTACT CSS */
+
+#contact-section {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    background: linear-gradient(to bottom, #ffffff, #f7f7f7);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+#contact-section .contact-content {
+    max-width: 600px;
+    animation: fadeIn 1.5s ease;
+}
+
+#contact-section h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 20px;
+    color: #ff6b6b;
+    text-shadow: 0 0 5px rgba(255, 110, 0, 0.2);
+}
+
+#contact-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    color: #555;
+}
+
+#contact-section .btn {
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid #ff6b6b;
+    transition: 0.3s ease;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #ff6b6b;
+    text-transform: uppercase;
+}
+
+#contact-section .btn:hover {
+    background-color: #fa5353;
+    color: white;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 50px;
+}
+
+.modal-content {
+    background: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    color: #333;
+}
+
+.modal-content .close {
+    color: #ff6b6b;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content .close:hover {
+    color: #333;
+}
+
+.modal-content form label {
+    display: block;
+    font-size: 14px;
+    margin: 15px 0 5px;
+    color: #555;
+}
+
+.modal-content form input, .modal-content form textarea, .modal-content form button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+.modal-content form button {
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.modal-content form button:hover {
+    background-color: #fc4c4c;
 }

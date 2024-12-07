@@ -3,6 +3,7 @@ function openModal(category) {
         dog: ['Labrador', 'Poodle', 'Bulldog'],
         cat: ['Persian', 'Siamese', 'Maine Coon'],
         bird: ['Parrot', 'Canary', 'Finch'],
+        all: ['jack sparrow', 'malupiton', 'hambre']
     };
 
     const breedList = document.getElementById('breed-list');
@@ -49,3 +50,19 @@ window.onclick = function(event) {
         closeModal();
     }
 }
+
+
+function openContactForm() {
+    document.getElementById("contact-modal").style.display = "block";
+}
+
+function closeContactForm() {
+    document.getElementById("contact-modal").style.display = "none";
+}
+
+window.onclick = function (event) {
+    const modal = document.getElementById("contact-modal");
+    if (event.target === modal) {
+        modal.style.display = "none";
+    }
+};
