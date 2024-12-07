@@ -2,9 +2,7 @@ function openModal(category) {
     const breeds = {
         dog: ['Labrador', 'Poodle', 'Bulldog'],
         cat: ['Persian', 'Siamese', 'Maine Coon'],
-        bird: ['Parrot', 'Canary', 'Finch'],
-        reptile: ['Iguana', 'Gecko', 'Snake'],
-        fish: ['Goldfish', 'Betta', 'Guppy']
+        bird: ['Parrot', 'Canary', 'Finch']
     };
 
     const breedList = document.getElementById('breed-list');
@@ -33,6 +31,22 @@ function showBreedDetails(breed) {
             image: 'path/to/poodle.jpg',
             description: 'Poodles are intelligent and active dogs.'
         },
+        Persian: {
+            image: 'path/to/persian.jpg',
+            description: 'Persian cats are known for their long hair and calm demeanor.'
+        },
+        Siamese: {
+            image: 'path/to/siamese.jpg',
+            description: 'Siamese cats are social and vocal.'
+        },
+        Parrot: {
+            image: 'path/to/parrot.jpg',
+            description: 'Parrots are colorful and intelligent birds.'
+        },
+        Canary: {
+            image: 'path/to/canary.jpg',
+            description: 'Canaries are small and known for their singing.'
+        }
     };
 
     document.getElementById('breed-image').src = breedDetails[breed].image;
