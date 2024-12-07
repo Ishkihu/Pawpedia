@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="media.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script src="script.js"></script>
     <title>PawPedia | Home</title>
 </head>
@@ -16,46 +18,102 @@
 
     <header>
         <nav>
-            <ul class="nav-left">
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-            </ul>
-            <div class="logo">
-                <a href="index.html"><img src="Assets/p11.jpg" alt="Pawpedia Logo"></a>
+            <div class="nav-left">
+                <div class="logo">
+                    <a href=""><img src="Assets/p11.jpg" alt="Pawpedia Logo"></a>
+                </div>
             </div>
             <ul class="nav-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="library.html">Library</a></li>
                 <li><a href="faq.html">FAQ</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Welcome to PawPedia</h1>
+
+
+    <section class="intro">
+        <div class="intro-message">
+            <h3>Welcome to</h3>
+            <h1>PawPedia!</h1>
             <p>Your ultimate resource for pet care and information.</p>
             <a href="library.html" class="btn">Explore Library</a>
         </div>
-        <img src="PawPedia/hero-image.jpg" alt="Happy pets" class="hero-image">
+        <img src="" alt="Nakangiting Aso" class="pet-image">
     </section>
 
-    <section class="features">
-        <div class="feature">
-            <img src="PawPedia/feature1.jpg" alt="Dogs" />
-            <h3>All About Dogs</h3>
-            <p>Learn about different breeds, their needs, and how to care for them.</p>
-        </div>
-        <div class="feature">
-            <img src="PawPedia/feature2.jpg" alt="Cats" />
-            <h3>All About Cats</h3>
-            <p>Discover tips for a happy and healthy life with your feline friend.</p>
-        </div>
-        <div class="feature">
-            <img src="PawPedia/feature3.jpg" alt="Birds" />
-            <h3>Bird Care</h3>
-            <p>Get insights into raising and caring for your feathered friends.</p>
+    <section id="about-1" class="about">
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="Assets/p111.png" alt="Person 1">
+                <p>Person 1 Description</p>
+            </div>
+            <div class="grid-item">
+                <img src="Assets/p222.png" alt="Person 2">
+                <p>Person 2 Description</p>
+            </div>
         </div>
     </section>
+
+    <section id="indiv-1" class="indiv">
+        <div class="grid-container">
+            <div class="grid-item">
+                <img src="Assets/p111.png" alt="Person 1">
+            </div>
+            <div class="grid-item">
+                <p>Person 1 Description</p>
+            </div>
+        </div>
+    </section> 
+    
+    <section id="indiv-2" class="indiv">
+        <div class="grid-container">
+            <div class="grid-item">
+                <p>Person 2 Description</p>
+            </div>
+            <div class="grid-item">
+                <img src="Assets/p222.png" alt="Person 2">
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="library section-hidden">
+        <h2>Pet Categories</h2>
+        <div class="card-container">
+            <div class="card" onclick="openModal('dog')">Dog</div>
+            <div class="card" onclick="openModal('cat')">Cat</div>
+            <div class="card" onclick="openModal('bird')">Bird</div>
+        </div>
+    
+        <div id="library-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-grid">
+                    <div class="breed-list">
+                        <ul id="breed-list" class="breed-list">
+                        </ul>
+                    </div>
+                    <div class="breed-details">
+                        <img id="breed-image" src="" alt="Breed Image">
+                        <p id="breed-description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="gallery" class="gallery section-hidden">
+
+    </section>
+
 
     <section class="cta">
         <h2>Join Our Community</h2>
