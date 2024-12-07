@@ -3,8 +3,6 @@ function openModal(category) {
         dog: ['Labrador', 'Poodle', 'Bulldog'],
         cat: ['Persian', 'Siamese', 'Maine Coon'],
         bird: ['Parrot', 'Canary', 'Finch'],
-        reptile: ['Iguana', 'Gecko', 'Snake'],
-        fish: ['Goldfish', 'Betta', 'Guppy']
     };
 
     const breedList = document.getElementById('breed-list');
@@ -16,25 +14,38 @@ function openModal(category) {
         breedList.appendChild(li);
     });
 
-    document.getElementById('modal').style.display = 'block';
+    document.getElementById('library-modal').style.display = 'block';
 }
 
 function closeModal() {
-    document.getElementById('modal').style.display = 'none';
+    document.getElementById('library-modal').style.display = 'none';
 }
 
 function showBreedDetails(breed) {
     const breedDetails = {
         Labrador: {
-            image: 'path/to/labrador.jpg',
+            image: 'Assets/labrador.jpg',
             description: 'Labradors are friendly and outgoing dogs.'
         },
         Poodle: {
-            image: 'path/to/poodle.jpg',
+            image: 'Assets/poodle.jpg',
             description: 'Poodles are intelligent and active dogs.'
         },
+        Bulldog: {
+            image: 'Assets/bulldog.jpg',
+            description: 'Bulldogs are calm and serene dogs.'
+        },
+        // Add more breed details as needed
     };
 
     document.getElementById('breed-image').src = breedDetails[breed].image;
     document.getElementById('breed-description').textContent = breedDetails[breed].description;
+}
+
+// Close the modal when clicking outside of the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById('library-modal');
+    if (event.target == modal) {
+        closeModal();
+    }
 }

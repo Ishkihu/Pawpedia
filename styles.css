@@ -1,80 +1,166 @@
-html {
-    scroll-behavior: smooth;
+/* NAVIGATION BAR */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-section {
-}
-
-.header {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    align-items: center;
-}
-
-.logo {
+header {
+    background: #ff6b6b;
+    padding: 1rem 0;
 }
 
 nav {
-    padding: 0.5rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
-    margin-left: auto;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
 }
 
-nav ul {
-    display: flex;
+.nav-left, .nav-right {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    gap: 1rem;
 }
 
-nav ul li {
-    margin-right: 6rem;
+.nav-left li, .nav-right li {
+    display: inline;
 }
 
-nav ul li:last-child {
-    margin-right: 0;
-}
-
-nav ul li a, .header a {
+a {
+    color: white;
     text-decoration: none;
-    color: black;
-    font-size: 1.2rem;
+    font-weight: bold;
 }
 
-.about {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    gap: 2rem;
+.logo img {
+    max-height: 50px;
 }
 
-.about-intro {
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9f7f6;
+    padding: 2rem;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.btn {
+    background: #ff6b6b;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: #ff4747;
+}
+
+.hero-image {
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    background: #f4f4f4;
+}
+
+.feature {
     text-align: center;
+    max-width: 300px;
 }
 
-.about-grid {
+.feature img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.cta {
+    text-align: center;
+    background: #ff6b6b;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+
+
+/*ABOUT CSS*/
+
+.about .grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
 }
 
-.jv-left, .kiel-right {
+.about .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-.jv-left img, .kiel-right img {
-    width: 100px;
+.indiv-1 .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.indiv-1 .grid-item {
+    text-align: center;
+}
+
+.indiv-2 .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.indiv-2 .grid-item {
+    text-align: center;
+}
+
+.about .grid-item img,
+.indiv-1 .grid-item img,
+.indiv-2 .grid-item img {
+    max-width: 100%;
     height: auto;
-    border-radius: 50%; 
+    border-radius: 8px;
 }
 
-footer {
-    background-color: #81be4d;
-    font-size: 1rem;
-    text-align: center;
-    padding: 0.02rem;
+.indiv-2 .grid-container {
+    direction: rtl;
 }
+
+.indiv-2 .grid-item {
+    direction: ltr;
+}
+
+/* LIBRARY CSS */
 
 .library {
     text-align: center;
@@ -92,13 +178,44 @@ footer {
     padding: 1rem;
     border-radius: 8px;
     cursor: pointer;
-    width: 150px;
+    width: 380px; /* Adjusted width */
+    height: 380px; /* Adjusted height */
     text-align: center;
     transition: background-color 0.3s;
+    position: relative;
 }
 
 .card:hover {
     background-color: #e0e0e0;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s;
+}
+
+.card-img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.card:hover .card-img-hover {
+    opacity: 1;
+}
+
+.card p {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px black;
 }
 
 .modal {
@@ -119,9 +236,9 @@ footer {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
+    border-radius: 15px; /* Add border-radius for curves */
     width: 80%;
     max-width: 800px;
-    border-radius: 8px; /* Add border-radius to modal content */
 }
 
 .close {
@@ -145,51 +262,55 @@ footer {
 }
 
 .breed-list {
-    overflow-y: auto;
-    max-height: 400px;
-}
-
-.breed-list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    list-style-type: none; /* Remove bullets */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; /* Set maximum height */
+    padding: 0; /* Remove default padding */
 }
 
 .breed-list li {
-    margin: 0.5rem 0;
-}
-
-.breed-list button {
-    background-color: #f0f0f0;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px; /* Add border-radius to buttons */
+    padding: 10px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    width: 100%;
-    text-align: left;
-    font-size: 1rem;
+    border: 1px solid #ddd; /* Add border */
+    margin-bottom: 5px; /* Add spacing between items */
+    border-radius: 15px; /* Add border-radius for curves */
+    transition: background-color 0.3s, border-color 0.3s; /* Add transition for hover effect */
 }
 
-.breed-list button:hover {
-    background-color: #e0e0e0;
-}
-
-.breed-list button:focus {
-    background-color: #d0d0d0;
-    outline: none;
-}
-
-.breed-list button:active {
-    transform: scale(0.98);
+.breed-list li:hover {
+    background-color: #ddd;
+    border-color: #bbb; /* Change border color on hover */
 }
 
 .breed-details {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 400px; /* Set maximum height */
 }
 
 .breed-details img {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+.breed-details p {
+    margin-top: 20px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: white;
+}
+
+footer a {
+    color: #ff6b6b;
 }
