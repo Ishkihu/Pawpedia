@@ -107,29 +107,29 @@
 
     <section id="library">
         <h2>Pet Categories</h2>
-        <div class="card-container">
-            <div class="card" onclick="openModal('all')">
+        <div id="category-card" class="card-container">
+            <div id="all" class="card" onclick="openModal('all')">
                 <img src="./Assets/all4.jpg" alt="All" class="card-img-main">
                 <img src="./Assets/all5.jpg" alt="All Hover" class="card-img-hover">
                 <div class="background">
                     <p>All</p>
                 </div>
             </div>
-            <div class="card" onclick="openModal('dog')">
+            <div id="dog" class="card" onclick="openModal('dog')">
                 <img src="./Assets/dog1.jpg" alt="Dog" class="card-img-main">
                 <img src="./Assets/dog2.jpg" alt="Dog Hover" class="card-img-hover">
                 <div class="background">
                     <p>Dog</p>
                 </div>
             </div>
-            <div class="card" onclick="openModal('cat')">
+            <div id="cat"class="card" onclick="openModal('cat')">
                 <img src="./Assets/cat5.jpg" alt="Cat" class="card-img-main">
                 <img src="./Assets/cat6.jpg" alt="Cat Hover" class="card-img-hover">
                 <div class="background">
                     <p>Cat</p>
                 </div>
             </div>
-            <div class="card" onclick="openModal('bird')">
+            <div id="bird" class="card" onclick="openModal('bird')">
                 <img src="./Assets/eagle1.jpg" alt="Bird" class="card-img-main">
                 <img src="./Assets/eagle2.jpg" alt="Bird Hover" class="card-img-hover">
                 <div class="background">
@@ -139,24 +139,37 @@
         </div>
     </section>
     
+    <section id="breed-cards" style="display: none;">
+        <h2>Breeds</h2>
+        <nav id="category-nav" style="display: none;">
+            <ul>
+                <li><a href="#all" onclick="openModal('all')">All</a></li>
+                <li><a href="#dog" onclick="openModal('dog')">Dog</a></li>
+                <li><a href="#cat" onclick="openModal('cat')">Cat</a></li>
+                <li><a href="#bird" onclick="openModal('bird')">Bird</a></li>
+            </ul>
+        </nav>
+        <div class="card-container" id="breed-card-container">
+            <!-- Breed cards will be dynamically added here -->
+        </div>
+        <button class="btn" onclick="returnToCategories()">Return to Categories</button>
+    </section>
     
-        <div id="library-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <div class="modal-grid">
-                    <div class="breed-list">
-                        <ul id="breed-list" class="breed-list">
-                        </ul>
-                    </div>
-                    <div class="breed-details">
-                        <img id="breed-image" src="" alt="Breed Image">
-                        <p id="breed-description"></p>
-                    </div>
+    <div id="breed-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBreedModal()">&times;</span>
+            <div class="modal-grid">
+                <div class="breed-image">
+                    <img id="breed-image" src="" alt="Breed Image">
+                </div>
+                <div class="breed-info">
+                    <h2 id="breed-name"></h2>
+                    <p id="breed-description"></p>
+                    <!-- Add more information here if needed -->
                 </div>
             </div>
         </div>
-    </section>
-
+    </div>
 
 
 
@@ -176,8 +189,8 @@
         </div>
     </div>
 
-    <div id="contact-modal" class="modal">
-        <div class="modal-content">
+    <div id="contact-modal" class="modal2">
+        <div class="modal-content2">
             <span class="close" onclick="closeContactForm()">&times;</span>
             <h2>Contact Us</h2>
             <form>

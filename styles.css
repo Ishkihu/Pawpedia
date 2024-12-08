@@ -231,6 +231,15 @@ a {
 
 /* LIBRARY CSS */
 
+.card-container {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.card-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 #library {
     text-align: center;
     padding: 5rem 5rem;
@@ -308,27 +317,28 @@ a {
     clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
 }
 
+
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000; /* Ensure it is above other content */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 2rem auto; /* Adjust margin to blend better with the page */
     padding: 20px;
     border: 1px solid #888;
     border-radius: 15px;
     width: 80%;
-    max-width: 800px;
+    max-width: 1200px;
+    height: 90%;
 }
 
 .close {
@@ -347,51 +357,100 @@ a {
 
 .modal-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    align-items: center;
     gap: 1rem;
 }
 
-.breed-list {
-    list-style-type: none; 
-    overflow-y: auto; 
-    max-height: 400px; 
-    padding: 0; 
-}
-
-.breed-list li {
-    padding: 10px;
-    cursor: pointer;
-    border: 1px solid #ddd; 
-    margin-bottom: 5px;
-    border-radius: 15px; 
-    transition: background-color 0.3s, border-color 0.3s; 
-}
-
-.breed-list li:hover {
-    background-color: #ddd;
-    border-color: #bbb; 
-}
-
-.breed-details {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    overflow-y: auto; 
-    max-height: 400px; 
-}
-
-.breed-details img {
-    max-width: 100%;
-    height: auto;
+.breed-image img {
+    width: 100%;
+    height: 300px; /* Ensure the image maintains its aspect ratio */
     border-radius: 8px;
 }
 
-.breed-details p {
-    margin-top: 20px;
+.breed-info {
+    text-align: left;
+    width: 100%; /* Ensure the text takes the full width of the modal */
 }
+
+
+#breed-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#breed-cards {
+    text-align: center;
+    height: auto;
+    padding: 5rem 4rem;
+    position: relative; /* Ensure the return button is positioned relative to this section */
+}
+
+#breed-cards h2 {
+    margin-bottom: 2rem;
+}
+
+#breed-cards .btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-right: 5rem;
+    text-decoration: none; /* Ensure the button looks like a button, not a link */
+}
+
+#breed-cards .btn:hover {
+    background-color: #ff4b4b;
+}
+
+#category-nav {
+    margin-bottom: 2rem;
+}
+
+#category-nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+#category-nav li {
+    display: inline;
+}
+
+#category-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    position: relative;
+}
+
+#category-nav a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #333;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+#category-nav a:hover::after {
+    width: 100%;
+}
+
 
 
 footer {
@@ -459,7 +518,7 @@ footer a {
     color: white;
 }
 
-.modal {
+.modal2 {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -472,7 +531,7 @@ footer a {
     padding-top: 50px;
 }
 
-.modal-content {
+.modal-content2 {
     background: #ffffff;
     margin: auto;
     padding: 20px;
@@ -485,7 +544,7 @@ footer a {
     color: #333;
 }
 
-.modal-content .close {
+.modal-content2 .close {
     color: #ff6b6b;
     float: right;
     font-size: 28px;
@@ -493,18 +552,18 @@ footer a {
     cursor: pointer;
 }
 
-.modal-content .close:hover {
+.modal-content2 .close:hover {
     color: #333;
 }
 
-.modal-content form label {
+.modal-content2 form label {
     display: block;
     font-size: 14px;
     margin: 15px 0 5px;
     color: #555;
 }
 
-.modal-content form input, .modal-content form textarea, .modal-content form button {
+.modal-content2 form input, .modal-content2 form textarea, .modal-content2 form button {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -514,7 +573,7 @@ footer a {
     color: #333;
 }
 
-.modal-content form button {
+.modal-content2 form button {
     background-color: #ff6b6b;
     color: white;
     border: none;
@@ -524,6 +583,6 @@ footer a {
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.modal-content form button:hover {
+.modal-content2 form button:hover {
     background-color: #fc4c4c;
 }
