@@ -30,7 +30,7 @@ function populateBreedCards(category) {
     const breeds = {
         dog: ['Husky', 'Rottweiler', 'Golden Retriever', 'Shih Tzu'],
         cat: ['British Shorthair', 'Siamese', 'Maine Coon', 'Ragdoll'],
-        bird: ['Parrot', 'Canary', 'Finch', 'Eagle'],
+        bird: ['Parrot', 'Falcon', 'Owl', 'Eagle'],
         all: []
     };
 
@@ -95,12 +95,12 @@ function showBreedDetails(breed) {
 
         //========================CATS================================
         'British Shorthair': {
-            background: 'Assets/british1.jpg',
-            image: 'Assets/british2.jpg',
+            background: 'Assets/britishshorthair1.jpg',
+            image: 'Assets/britishshorthair2.jpg',
             description: 'Persian cats are quiet and sweet.'
         },
         Siamese: {
-            background: 'Assets/siamese1.png',
+            background: 'Assets/siamese1.jpg',
             image: 'Assets/siamese2.jpg',
             description: 'Siamese cats are social and vocal.'
         },
@@ -121,14 +121,14 @@ function showBreedDetails(breed) {
             image: 'Assets/parrot2.jpg',
             description: 'Parrots are intelligent and colorful birds.'
         },
-        Canary: {
-            background: 'Assets/canary1.jpg',
-            image: 'Assets/canary2.jpg',
+        Falcon: {
+            background: 'Assets/falcon1.jpg',
+            image: 'Assets/falcon2.jpg',
             description: 'Canaries are small and melodious birds.'
         },
-        Finch: {
-            background: 'Assets/finch1.jpg',
-            image: 'Assets/finch2.jpg',
+        Owl: {
+            background: 'Assets/owl1.jpg',
+            image: 'Assets/owl2.jpg',
             description: 'Finches are lively and social birds.'
         },
         Eagle: {
