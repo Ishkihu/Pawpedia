@@ -36,7 +36,7 @@ nav {
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 3rem;
     max-height: 50px;
 }
 
@@ -106,20 +106,57 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #f9f7f6;
     padding: 5rem 10rem;
-    height: 100vh; 
+    height: 100vh;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .intro-message {
-    max-width: 600px;
+    z-index: 1;
+    max-width: 650px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
 }
 
-#intro .intro-message h1 {
-    font-size: 3rem;
-    color: #333;
-    font-family: 'Oi';
-    font-weight: 400;
+.intro-message h3 {
+    font-size: 1.5rem;
+    color: rgb(255, 107, 107);
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+}
+
+.intro-message h1 {
+    font-size: 3.5rem;
+    color: #515151;
+    font-family: 'Oi', sans-serif;
+    font-weight: lighter;
+    margin: 0.5rem 0;
+    text-transform: uppercase;
+    text-shadow: -10px 5px 5px rgba(51, 51, 51, 0.2); /* Bottom shadow */
+    letter-spacing: 2px;
+}
+
+.intro-message p {
+    text-align:justify;
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.intro-message .btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 25px 0 25px 0;
+    transition: background-color 0.3s ease;
 }
 
 .btn {
@@ -139,8 +176,7 @@ a {
 }
 
 .pet-image {
-    max-width: 400px;
-    border-radius: 10px;
+    max-width: 600px;
 }
 
 .cta{
@@ -235,6 +271,7 @@ a {
     transition: opacity 0.5s ease-in-out;
 }
 
+
 .card-container.hidden {
     opacity: 0;
     pointer-events: none;
@@ -258,12 +295,11 @@ a {
     cursor: pointer;
     width: 280px;
     height: 350px;
-    text-align: center;
     transition: background-color 0.3s, transform 0.3s; 
     position: relative;
     overflow: hidden;
     border-width: 1px;
-    border-style:groove
+    border-style: groove;
 }
 
 .card:hover {
@@ -297,13 +333,16 @@ a {
 .card p {
     position: absolute;
     bottom: 10px;
-    left: 50%;
+    left: 53%;
     transform: translateX(-50%);
     color: white;
-    font-size: 18px;
     font-weight: bold;
     max-width: 280px;
     z-index: 2; 
+    white-space: nowrap; 
+    overflow: hidden;    
+    text-overflow: ellipsis; 
+    font-size: 1.2rem; 
 }
 
 .background {
@@ -318,59 +357,136 @@ a {
 }
 
 
+
+
+/* Modal Styling */
 .modal {
-    display: none;
+    display: none; 
     position: fixed;
-    z-index: 1000; /* Ensure it is above other content */
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: 2rem auto; /* Adjust margin to blend better with the page */
-    padding: 20px;
-    border: 1px solid #888;
+    position: relative;
+    margin: 2rem auto;
+    background-color: white;
     border-radius: 15px;
+    padding: 2rem;
     width: 80%;
     max-width: 1200px;
-    height: 90%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    z-index: -2;
 }
 
 .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    color: #ff6b6b;
     cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
+.close:hover {
+    transform: scale(1.2);
+}
+
+/* Modal Grid Layout */
 .modal-grid {
     display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
     align-items: center;
-    gap: 1rem;
+    width: 100%;
+}
+
+/* Background Image Styling */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    z-index: -1;
+    overflow: hidden; 
+}
+
+.background-image img {
+    border-radius: 15px 15px 0 0;
+    display: block;
+    width: 100%;    
+    height: 50%;  
+    object-fit: cover; 
+    object-position: center; 
+}
+
+
+/* Breed Image Styling */
+.breed-image {
+    margin-top: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
+    width: 250px; 
+    height: 250px; 
 }
 
 .breed-image img {
-    width: 100%;
-    height: 300px; /* Ensure the image maintains its aspect ratio */
-    border-radius: 8px;
+    max-width: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    width: 250px; 
+    height: 250px;
 }
 
+/* Breed Info Styling */
 .breed-info {
+    margin-top: 10rem;
     text-align: left;
-    width: 100%; /* Ensure the text takes the full width of the modal */
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    
+    width: auto;
+    height: 250px;
 }
+
+.breed-info h2 {
+    font-size: 2rem;
+    color: rgb(255, 107, 107);
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-family: 'Impact', sans-serif;
+}
+
+.breed-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+
+
 
 
 #breed-card-container {
@@ -384,7 +500,7 @@ a {
     text-align: center;
     height: auto;
     padding: 5rem 4rem;
-    position: relative; /* Ensure the return button is positioned relative to this section */
+    position: relative; 
 }
 
 #breed-cards h2 {
@@ -404,7 +520,7 @@ a {
     font-size: 16px;
     transition: background-color 0.3s;
     margin-right: 5rem;
-    text-decoration: none; /* Ensure the button looks like a button, not a link */
+    text-decoration: none; 
 }
 
 #breed-cards .btn:hover {

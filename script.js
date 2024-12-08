@@ -28,26 +28,31 @@ function populateBreedCards(category) {
     breedCardContainer.innerHTML = ''; // Clear existing cards
 
     const breeds = {
-        dog: ['Labrador', 'Poodle', 'Bulldog', 'Corgi'],
-        cat: ['Persian', 'Siamese', 'Maine Coon', 'Pusang Kalye'],
+        dog: ['Husky', 'Rottweiler', 'Golden Retriever', 'Shih Tzu'],
+        cat: ['Persian', 'Siamese', 'Maine Coon', 'Ragdoll'],
         bird: ['Parrot', 'Canary', 'Finch', 'Eagle'],
-        all: ['jack sparrow', 'malupiton', 'hambre']
+        all: []
     };
 
     let breedList = [];
 
+    // Get the appropriate breed list based on the category
     if (category === 'all') {
-        // Combine all breeds into one array and sort alphabetically
-        breedList = [...breeds.dog, ...breeds.cat, ...breeds.bird, ...breeds.all].sort((a, b) => a.localeCompare(b));
+        // Combine all categories and sort alphabetically
+        breedList = [...breeds.dog, ...breeds.cat, ...breeds.bird, ...breeds.all];
     } else {
         breedList = breeds[category];
     }
 
+    // Sort the breed list alphabetically (case-insensitive)
+    breedList.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+
+    // Generate the cards
     breedList.forEach(breed => {
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-            <img src="./Assets/${breed.toLowerCase().replace(' ', '')}.jpg" alt="${breed}" class="card-img-main">
+            <img src="./Assets/${breed.toLowerCase().replace(/\s+/g, '')}.jpg" alt="${breed}" class="card-img-main">
             <div class="background">
                 <p>${breed}</p>
             </div>
@@ -56,6 +61,7 @@ function populateBreedCards(category) {
         breedCardContainer.appendChild(card);
     });
 }
+
 
 function closeModal() {
     // Hide the breed cards section
@@ -67,56 +73,74 @@ function closeModal() {
 
 function showBreedDetails(breed) {
     const breedDetails = {
-        Labrador: {
-            image: 'Assets/dog22.jpg',
+        //========================DOGS================================
+        Husky: {
+            background: 'Assets/husky1.jpg',
+            image: 'Assets/husky2.jpg',
             description: 'Labradors are friendly and outgoing dogs.'
         },
-        Poodle: {
-            image: 'Assets/poodle.jpg',
+        Rottweiler: {
+            background: 'Assets/rottweiler1.jpg',
+            image: 'Assets/rottweiler2.jpg',
             description: 'Poodles are intelligent and active dogs.'
         },
-        Bulldog: {
-            image: 'Assets/bulldog.jpg',
+        'Golden Retriever': {
+            background: 'Assets/goldenretriever1.jpg',
+            image: 'Assets/goldenretriever2.jpg',
             description: 'Bulldogs are calm and serene dogs.'
         },
+        'Shih Tzu': {
+            background: 'Assets/shihtzu1.jpg',
+            image: 'Assets/shihtzu2.jpg',
+            description: 'Bulldogs are calm and serene dogs.'
+        },
+
+        //========================CATS================================
         Persian: {
-            image: 'Assets/persian.jpg',
+            background: 'Assets/persian1.jpg',
+            image: 'Assets/persian2.jpg',
             description: 'Persian cats are quiet and sweet.'
         },
         Siamese: {
-            image: 'Assets/siamese.jpg',
+            background: 'Assets/siamese1.jpg',
+            image: 'Assets/siamese2.jpg',
             description: 'Siamese cats are social and vocal.'
         },
         'Maine Coon': {
-            image: 'Assets/mainecoon.jpg',
+            background: 'Assets/mainecoon1.jpg',
+            image: 'Assets/mainecoon2.jpg',
             description: 'Maine Coon cats are large and friendly.'
         },
+        Ragdoll: {
+            background: 'Assets/ragdoll1.jpg',
+            image: 'Assets/ragdoll2.jpg',
+            description: 'Maine Coon cats are large and friendly.'
+        },
+
+        //========================BIRDS================================
         Parrot: {
-            image: 'Assets/parrot.jpg',
+            background: 'Assets/parrot1.jpg',
+            image: 'Assets/parrot2.jpg',
             description: 'Parrots are intelligent and colorful birds.'
         },
         Canary: {
-            image: 'Assets/canary.jpg',
+            background: 'Assets/canary1.jpg',
+            image: 'Assets/canary2.jpg',
             description: 'Canaries are small and melodious birds.'
         },
         Finch: {
-            image: 'Assets/finch.jpg',
+            background: 'Assets/finch1.jpg',
+            image: 'Assets/finch2.jpg',
             description: 'Finches are lively and social birds.'
         },
-        'jack sparrow': {
-            image: 'Assets/jacksparrow.jpg',
-            description: 'Jack Sparrows are adventurous and brave.'
+        Eagle: {
+            background: 'Assets/eagle1.jpg',
+            image: 'Assets/eagle2.jpg',
+            description: 'Finches are lively and social birds.'
         },
-        malupiton: {
-            image: 'Assets/malupiton.jpg',
-            description: 'Malupitons are rare and mysterious.'
-        },
-        hambre: {
-            image: 'Assets/hambre.jpg',
-            description: 'Hambres are fierce and strong.'
-        }
     };
 
+    document.getElementById('background-image').src = breedDetails[breed].background;
     document.getElementById('breed-image').src = breedDetails[breed].image;
     document.getElementById('breed-name').textContent = breed;
     document.getElementById('breed-description').textContent = breedDetails[breed].description;
