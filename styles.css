@@ -8,6 +8,7 @@
 
 /* HEADER */
 #about h2, #library h2, #gallery h2, #contact-section h1, #breed-cards h2{
+    cursor: pointer;
     font-size: 3rem;
     text-align:center;
     margin-bottom: 2rem;
@@ -113,7 +114,7 @@ a {
     height: 24px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    z-index: 1000; / Ensure it is above other elements */
+    z-index: 1000;
 }
 
 .hamburger div {
@@ -343,6 +344,10 @@ a {
     text-align: center;
     padding: 5rem 5rem;
     height: auto;
+}
+
+#library h2, #breed-cards h2{
+    color:#ff6b6b
 }
 
 .card-container {
@@ -611,9 +616,14 @@ a {
 #category-nav a {
     text-decoration: none;
     color: #333;
-    font-size: 18px;
+    font-size: 1.5rem;
     font-weight: bold;
     position: relative;
+}
+
+#category-nav a:hover {
+    color: #ff6b6b; /* Change text color to a soft pink */
+    transform: translateY(-5px); /* Slight lift effect */
 }
 
 #category-nav a::after {
@@ -621,7 +631,7 @@ a {
     display: block;
     width: 0;
     height: 2px;
-    background: #333;
+    background: #ff6b6b;
     transition: width 0.3s;
     position: absolute;
     bottom: -5px;
@@ -630,6 +640,7 @@ a {
 
 #category-nav a:hover::after {
     width: 100%;
+    transform: scale(1.3);
 }
 
 
