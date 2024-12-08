@@ -65,10 +65,7 @@ function populateBreedCards(category) {
 
 
 function closeModal() {
-    // Hide the breed cards section
     document.getElementById('breed-cards').style.display = 'none';
-    
-    // Show the category cards
     document.getElementById('library').style.display = 'block';
 }
 
@@ -145,12 +142,10 @@ function showBreedDetails(breed) {
     document.getElementById('breed-name').textContent = breed;
     document.getElementById('breed-description').textContent = breedDetails[breed].description;
 
-    // Show the breed modal
     document.getElementById('breed-modal').style.display = 'block';
 }
 
 function closeBreedModal() {
-    // Hide the breed modal
     document.getElementById('breed-modal').style.display = 'none';
 }
 
