@@ -1,3 +1,12 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+});
 
 function openModal(category) {
     // Hide the category cards
@@ -53,7 +62,8 @@ function populateBreedCards(category) {
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-            <img src="./Assets/${breed.toLowerCase().replace(/\s+/g, '')}.jpg" alt="${breed}" class="card-img-main">
+            <img src="./Assets/${breed.toLowerCase().replace(/\s+/g, '')}1.jpg" alt="${breed}" class="card-img-main">
+            <img src="./Assets/${breed.toLowerCase().replace(/\s+/g, '')}2.jpg" alt="${breed} Hover" class="card-img-hover">
             <div class="background">
                 <p>${breed}</p>
             </div>
@@ -62,6 +72,7 @@ function populateBreedCards(category) {
         breedCardContainer.appendChild(card);
     });
 }
+
 
 function closeModal() {
     // Hide the breed cards section
@@ -139,7 +150,6 @@ function showBreedDetails(breed) {
             description: 'Finches are lively and social birds.'
         },
     };
-
     document.getElementById('background-image').src = breedDetails[breed].background;
     document.getElementById('breed-image').src = breedDetails[breed].image;
     document.getElementById('breed-name').textContent = breed;
