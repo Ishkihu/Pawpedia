@@ -1,5 +1,19 @@
 /* Media Queries for Mobile and Tablet */
 @media (max-width: 768px) {
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    body {
+        padding-top: 4rem;
+    }
+}
+
+
+@media (max-width: 768px) {
     .hamburger {
         display: block;
     }
