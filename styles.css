@@ -647,7 +647,13 @@ footer {
 }
 
 footer a {
+    display: inline-block;
+    transition: transform 0.3s ease;
     color: #ff6b6b;
+}
+
+footer a:hover {
+    transform: translateY(-5px);
 }
 
 
