@@ -40,7 +40,6 @@ nav {
     margin: 0 auto;
     padding: 0 3rem;
     max-height: 50px;
-    scroll-behavior: smooth;
 }
 
 .nav-left, .nav-right {
@@ -115,7 +114,7 @@ a {
     height: 24px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
 .hamburger div {
@@ -160,11 +159,6 @@ a {
 #nav-links ul li {
     margin-right: 20px;
 }
-
-
-
-
-/* INTRO MESSAGE */
 
 #intro {
     display: flex;
@@ -336,10 +330,6 @@ a {
 
 /* LIBRARY CSS */
 
-.card-container {
-    transition: opacity 0.5s ease-in-out;
-}
-
 
 .card-container.hidden {
     opacity: 0;
@@ -359,7 +349,7 @@ a {
 .card-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2rem; 
 }
 
 .card {
@@ -561,18 +551,16 @@ a {
     font-weight: 400;
 }
 
-
-
-
-
 #breed-card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* Ensure cards wrap to new lines */
+    justify-content: center; /* Align cards in the center */
+    gap: 2rem; /* Maintain the same gap between cards */
     transition: opacity 0.5s ease-in-out;
 }
 
 #breed-cards {
+    display: none;
     text-align: center;
     height: auto;
     padding: 5rem 4rem;
