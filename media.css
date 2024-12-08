@@ -8,10 +8,10 @@
         display: none;
         position: absolute;
         top: 60px;
-        right: 20px;
-        background-color: #333;
+        right: 0px;
+        background-color: #ff6b6b;
         padding: 10px;
-        border-radius: 5px;
+        border-radius: 10px;
         z-index: 999;
     }
 
@@ -357,5 +357,88 @@
         padding: 4px 8px;
         font-size: 10px;
         margin-right: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media Queries for Mobile and Tablet */
+@media (max-width: 768px) {
+    .modal-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .breed-image {
+        margin-top: 4rem; /* Increased margin-top to lower the picture */
+        width: 150px; /* Smaller width */
+        height: 150px; /* Smaller height */
+    }
+
+    .breed-image img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .breed-info {
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+        padding: 1rem;
+        height: auto; /* Adjust height for smaller screens */
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: 50vh; /* Ensure it doesn't overflow the modal */
+        height: 200px;
+    }
+
+    .breed-info h2 {
+        font-size: 1.5rem;
+    }
+
+    .breed-info p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .breed-image, .breed-image img {
+        margin-top: 2rem; /* Increased margin-top to lower the picture */
+        width: 100px; /* Smaller width */
+        height: 100px; /* Smaller height */
+    }
+
+    .breed-info {
+        margin-top: 0.5rem;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem;
+        height: auto; /* Adjust height for smaller screens */
+        overflow-y: auto; /* Enable vertical scrolling */
+        max-height: 50vh; /* Ensure it doesn't overflow the modal */
+    }
+
+    .breed-info h2 {
+        font-size: 1.2rem;
+    }
+
+    .breed-info p {
+        font-size: 0.8rem;
     }
 }

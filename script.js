@@ -75,7 +75,7 @@ function showBreedDetails(breed) {
         Husky: {
             background: 'Assets/husky1.jpg',
             image: 'Assets/husky2.jpg',
-            description: 'Labradors are friendly and outgoing dogs.'
+            description: 'Labradors are friendly and outgoing dogs. Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.'
         },
         Rottweiler: {
             background: 'Assets/rottweiler1.jpg',

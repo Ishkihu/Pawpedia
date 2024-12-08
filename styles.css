@@ -453,6 +453,7 @@ a {
     align-items: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     z-index: -2;
+    overflow: hidden; /* Ensure content stays within modal */
 }
 
 .close {
@@ -498,7 +499,6 @@ a {
     object-position: center; 
 }
 
-
 /* Breed Image Styling */
 .breed-image {
     margin-top: 10rem;
@@ -534,6 +534,7 @@ a {
     
     width: auto;
     height: 250px;
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .breed-info h2 {
@@ -551,6 +552,14 @@ a {
     margin-bottom: 0;
     font-weight: 400;
 }
+
+
+
+
+
+
+
+
 
 #breed-card-container {
     display: flex;
@@ -735,6 +744,7 @@ footer a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     text-align: left;
     color: #333;
+    position: relative;
 }
 
 .modal-content2 .close {
