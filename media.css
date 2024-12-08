@@ -9,10 +9,10 @@
         position: absolute;
         top: 60px;
         right: 20px;
-        background-color: #333; /* Adjust as needed */
+        background-color: #333;
         padding: 10px;
         border-radius: 5px;
-        z-index: 999; /* Ensure it is above other elements */
+        z-index: 999;
     }
 
     #nav-links.active {
@@ -29,8 +29,333 @@
     }
 
     #nav-links ul li a {
-        color: white; /* Adjust as needed */
+        color: white; 
         text-decoration: none;
     }
 }
+/* Large Tablet */
+@media (max-width: 1024px) {
+    #about {
+        padding: 3rem 7rem;
+    }
 
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #about .grid-item {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    #about .grid-item img {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    #about .grid-item p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    #intro {
+        flex-direction: column;
+        padding: 2rem;
+        height: auto;
+    }
+
+    .intro-message {
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    .intro-message h1 {
+        font-size: 2rem;
+    }
+
+    .intro-message h3,
+    .intro-message p,
+    .intro-message .btn,
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    .intro-message .btn,
+    .btn {
+        padding: 0.6rem 1.2rem;
+    }
+
+    .pet-image {
+        max-width: 100%;
+        margin-bottom: 1rem; 
+    }
+
+    #about {
+        padding: 2rem 5rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    #about .grid-item {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    #about .grid-item img {
+        max-width: 100%;
+        margin-bottom: 2rem; 
+    }
+
+    #about .grid-item p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #intro {
+        padding: 1rem;
+    }
+
+    .intro-message {
+        padding: 0.5rem;
+    }
+
+    .intro-message h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro-message h3,
+    .intro-message p,
+    .intro-message .btn,
+    .btn {
+        font-size: 0.8rem;
+    }
+
+    .intro-message .btn,
+    .btn {
+        padding: 0.5rem 1rem;
+    }
+
+    .pet-image {
+        max-width: 100%;
+        margin-bottom: 0.5rem; 
+    }
+
+    #about {
+        padding: 1rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    #about .grid-item {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    #about .grid-item img {
+        max-width: 100%;
+        margin-bottom: 1.5rem; 
+    }
+
+    #about .grid-item p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+    #about {
+        padding: 0.5rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    #about .grid-item {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    #about .grid-item img {
+        max-width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    #about .grid-item p {
+        font-size: 0.8rem;
+    }
+}
+
+
+/* LIBRARY */
+
+/* Tablet */
+@media (max-width: 768px) {
+    #library {
+        padding: 3rem 2rem;
+    }
+
+    .card-container {
+        gap: 1rem;
+        justify-content: center; 
+    }
+
+    .card {
+        width: 240px;
+        height: 300px;
+    }
+
+    .card p {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #library {
+        padding: 2rem 1rem;
+    }
+
+    .card-container {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center; 
+    }
+
+    .card {
+        width: calc(50% - 1rem); 
+        height: 250px;
+    }
+
+    .card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+    #library {
+        padding: 1rem 0.5rem;
+    }
+
+    .card-container {
+        gap: 0.5rem;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
+    .card {
+        width: calc(50% - 0.5rem); 
+        height: 200px;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+/* BREED CARDS */
+
+/* Tablet */
+@media (max-width: 768px) {
+    #breed-cards {
+        padding: 3rem 2rem;
+    }
+
+    #breed-card-container {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 1rem;
+    }
+
+    #breed-card-container .card {
+        width: calc(33.33% - 1rem); 
+        height: 300px;
+    }
+
+    #breed-card-container .card p {
+        font-size: 1rem;
+    }
+
+    #breed-cards .btn {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 16px;
+        font-size: 14px;
+        margin-right: 3rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    #breed-cards {
+        padding: 2rem 1rem;
+    }
+
+    #breed-card-container {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center; 
+        gap: 1rem;
+    }
+
+    #breed-card-container .card {
+        width: calc(33.33% - 1rem); 
+        height: 250px;
+    }
+
+    #breed-card-container .card p {
+        font-size: 0.9rem;
+    }
+
+    #breed-cards .btn {
+        bottom: 10px;
+        right: 10px;
+        padding: 6px 12px;
+        font-size: 12px;
+        margin-right: 2rem;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 320px) {
+    #breed-cards {
+        padding: 1rem 0.5rem;
+    }
+
+    #breed-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; 
+        gap: 0.5rem;
+    }
+
+    #breed-card-container .card {
+        width: calc(33.33% - 0.5rem);
+        height: 200px;
+    }
+
+    #breed-card-container .card p {
+        font-size: 0.8rem;
+    }
+
+    #breed-cards .btn {
+        bottom: 5px;
+        right: 5px;
+        padding: 4px 8px;
+        font-size: 10px;
+        margin-right: 1rem;
+    }
+}

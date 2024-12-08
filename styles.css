@@ -115,7 +115,7 @@ a {
     height: 24px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    z-index: 1000;
+    z-index: 1000; 
 }
 
 .hamburger div {
@@ -160,6 +160,11 @@ a {
 #nav-links ul li {
     margin-right: 20px;
 }
+
+
+
+
+/* INTRO MESSAGE */
 
 #intro {
     display: flex;
