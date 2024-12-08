@@ -7,12 +7,13 @@
 }
 
 /* HEADER */
-#about h2, #library h2, #gallery h2, #contact-section h1{
-    font-size: 2rem;
+#about h2, #library h2, #gallery h2, #contact-section h1, #breed-cards h2{
+    font-size: 3rem;
     text-align:center;
     margin-bottom: 2rem;
     font-weight: lighter;
     font-family: 'Impact', sans-serif;
+    letter-spacing: 5px;
 
 }
 
@@ -102,6 +103,62 @@ a {
     max-height: 50px;
 }
 
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1000; / Ensure it is above other elements */
+}
+
+.hamburger div {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.hamburger div:nth-child(1) {
+    top: 0;
+}
+
+.hamburger div:nth-child(2) {
+    top: 10px;
+}
+
+.hamburger div:nth-child(3) {
+    top: 20px;
+}
+
+.hamburger.active div:nth-child(1) {
+    transform: rotate(45deg);
+    top: 10px;
+}
+
+.hamburger.active div:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 10px;
+}
+
+#nav-links ul {
+    display: flex;
+    list-style-type: none;
+}
+
+#nav-links ul li {
+    margin-right: 20px;
+}
+
 #intro {
     display: flex;
     align-items: center;
@@ -120,6 +177,7 @@ a {
     border-radius: 15px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .intro-message h3 {
@@ -192,25 +250,26 @@ a {
 
 /*ABOUT CSS*/
 
-#about .grid-container {
+#about {
+    padding: 3rem 10rem;
+    height: auto;
+    background-color: #f4dddd; /* Add a soft background color for the section */
+}
+
+#about h2 {
+    text-align: center;
+
+    color: white;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 5px rgba(0,0,0, 0.3);
+
+}
+
+.grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
     justify-items: center;
     align-items: center;
-}
-
-#about{
-    padding: 5rem 10rem;
-    height: auto;
-}
-
-#about .grid-item p{
-    text-align: justify;
-}
-
-.grid-container{
-    padding-bottom: 5rem;
 }
 
 #about .grid-item {
@@ -218,52 +277,55 @@ a {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background-color: #ffffff; /* White background for the individual card */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    padding: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s; /* Add smooth transition on hover */
 }
 
-#about .grid-item p span{
-    font-weight: bold;
-    color: #ff6b6b;
+#about .grid-item:hover, #intro .intro-message:hover  {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
-.indiv-1 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
-}
-
-.indiv-1 .grid-item {
-    text-align: center;
-}
-
-.indiv-2 .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    justify-items: center;
-    align-items: center;
-}
-
-.indiv-2 .grid-item {
-    text-align: center;
-}
-
-#about .grid-item img,
-.indiv-1 .grid-item img,
-.indiv-2 .grid-item img {
-    max-width: 100%;
+#about .grid-item img {
+    max-width: 250px; /* Limit image size */
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
+#about .grid-item p {
+    text-align: justify;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+#about .grid-item p span {
+    font-weight: bold;
+    color: #ff6b6b; /* Accent color for names */
+}
+
+#about .grid-item p em {
+    font-style: italic;
+    color: #555; /* Slightly darker color for emphasis */
+}
+
+/* Individual sections (indiv-1 and indiv-2) */
+.indiv-1, .indiv-2 {
+    margin-bottom: 3rem; /* Space between individual sections */
+}
+
+/* Reverse layout for indiv-2 (RTL) */
 .indiv-2 .grid-container {
-    direction: rtl;
+    direction: rtl; /* Make the content reverse in this section */
 }
 
 .indiv-2 .grid-item {
-    direction: ltr;
+    direction: ltr; /* Reset direction for individual item */
 }
+
 
 /* LIBRARY CSS */
 
@@ -343,6 +405,9 @@ a {
     overflow: hidden;    
     text-overflow: ellipsis; 
     font-size: 1.2rem; 
+    text-transform: uppercase;
+    font-family: 'impact';
+    letter-spacing: 2px;   
 }
 
 .background {
