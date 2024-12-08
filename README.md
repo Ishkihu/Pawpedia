@@ -117,8 +117,14 @@ For any questions or feedback, feel free to reach out:
 - **Kiel Andrew C. Esta**  
   - [Facebook](https://www.facebook.com/KielAndrewEsta)  
   - [Instagram](https://www.instagram.com/_kiyell/)  
-  - [GitHub](https://github.com/Ishkihu)  
+  - [GitHub](https://github.com/Kiel-Andrew)  
   - [LinkedIn](https://www.linkedin.com/in/kiel-andrew-esta-323b0432b/)
+
+- **John Victor A. Esquejo**  
+  - [Facebook](https://www.facebook.com/Ishkihu)
+  - [Instagram](https://www.instagram.com/Ishkihu)
+  - [Github](https://github.com/Ishkihu)
+  - [LinkedIn](https://www.linkedin.com/in/john-victor-esquejo-b607a6337/)
 
 ---
 
