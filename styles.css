@@ -330,10 +330,6 @@ a {
 
 /* LIBRARY CSS */
 
-.card-container {
-    transition: opacity 0.5s ease-in-out;
-}
-
 
 .card-container.hidden {
     opacity: 0;
@@ -353,7 +349,7 @@ a {
 .card-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 2rem; 
 }
 
 .card {
@@ -560,9 +556,10 @@ a {
 
 
 #breed-card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
+    display: flex;
+    flex-wrap: wrap; /* Ensure cards wrap to new lines */
+    justify-content: center; /* Align cards in the center */
+    gap: 2rem; /* Maintain the same gap between cards */
     transition: opacity 0.5s ease-in-out;
 }
 
