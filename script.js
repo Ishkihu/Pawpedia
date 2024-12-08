@@ -1,3 +1,4 @@
+
 function openModal(category) {
     // Hide the category cards
     document.getElementById('library').style.display = 'none';
@@ -61,7 +62,6 @@ function populateBreedCards(category) {
         breedCardContainer.appendChild(card);
     });
 }
-
 
 function closeModal() {
     // Hide the breed cards section
@@ -162,7 +162,6 @@ window.onclick = function(event) {
     }
 };
 
-
 function openContactForm() {
     document.getElementById("contact-modal").style.display = "block";
 }
@@ -178,3 +177,13 @@ window.onclick = function (event) {
     }
 };
 
+
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+});

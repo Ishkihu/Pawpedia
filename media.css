@@ -1,0 +1,36 @@
+/* Media Queries for Mobile and Tablet */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    #nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        background-color: #333; /* Adjust as needed */
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 999; /* Ensure it is above other elements */
+    }
+
+    #nav-links.active {
+        display: block;
+    }
+
+    #nav-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #nav-links ul li {
+        margin: 10px 0;
+    }
+
+    #nav-links ul li a {
+        color: white; /* Adjust as needed */
+        text-decoration: none;
+    }
+}
+
