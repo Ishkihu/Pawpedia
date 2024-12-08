@@ -1,7 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Oi&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sofadi+One&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* HEADER */
+#about h2, #library h2, #gallery h2, #contact-section h1{
+    font-size: 2rem;
+    text-align:center;
+    margin-bottom: 2rem;
+    font-weight: lighter;
+    font-family: 'Impact', sans-serif;
+
 }
 
 /* NAVIGATION BAR */
@@ -103,9 +115,11 @@ a {
     max-width: 600px;
 }
 
-.intro-message h1 {
-    font-size: 2.5rem;
+#intro .intro-message h1 {
+    font-size: 3rem;
     color: #333;
+    font-family: 'Oi';
+    font-weight: 400;
 }
 
 .btn {
@@ -120,6 +134,7 @@ a {
 }
 
 .btn:hover {
+    scale:calc(1.05);
     background: #ff4747;
 }
 
@@ -147,11 +162,6 @@ a {
     gap: 20px;
     justify-items: center;
     align-items: center;
-}
-
-#about h1 {
-    text-align: center;
-    margin-bottom: 2rem;
 }
 
 #about{
@@ -227,10 +237,6 @@ a {
     height: auto;
 }
 
-#library h2 {
-    margin-bottom: 2rem;
-}
-
 .card-container {
     display: flex;
     justify-content: center;
@@ -239,14 +245,16 @@ a {
 
 .card {
     background-color: #ff6b6b;
-    border-radius: 8px;
+    border-radius: 20px;
     cursor: pointer;
     width: 280px;
     height: 350px;
     text-align: center;
     transition: background-color 0.3s, transform 0.3s; 
     position: relative;
-    overflow: hidden; 
+    overflow: hidden;
+    border-width: 1px;
+    border-style:groove
 }
 
 .card:hover {
@@ -260,7 +268,6 @@ a {
     height: 100%; 
     object-fit: cover; 
     margin-bottom: 0.5rem;
-    border-radius: 8px;
     transition: opacity 0.3s;
 }
 
@@ -298,16 +305,7 @@ a {
     bottom: 0;
     left: 0;
     z-index: 1; 
-    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%); 
-    transition: background-color 0.3s; 
-}
-
-.card:hover .background {
-    background-color: #ffffff; 
-}
-
-.card:hover p{
-    color: #ff6b6b;
+    clip-path: polygon(0 0, 80% 0, 100% 100%, 0% 100%);
 }
 
 .modal {
