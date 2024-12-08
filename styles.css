@@ -45,7 +45,7 @@ nav {
 .nav-left, .nav-right {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 1rem; 
 }
 
 .nav-left li, .nav-right li {
@@ -53,7 +53,8 @@ nav {
 }
 
 .nav-right li {
-    margin-right: 1rem;
+    margin-right: 2rem;
+    padding: 0rem 0.5rem; 
 }
 
 .nav-right li:last-child {
