@@ -45,7 +45,7 @@ nav {
 .nav-left, .nav-right {
     list-style: none;
     display: flex;
-    gap: 1rem; 
+    gap: 1rem;
 }
 
 .nav-left li, .nav-right li {
@@ -54,7 +54,7 @@ nav {
 
 .nav-right li {
     margin-right: 2rem;
-    padding: 0rem 0.5rem; 
+    padding: 0rem 0.5rem;
 }
 
 .nav-right li:last-child {
@@ -453,7 +453,7 @@ a {
     align-items: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     z-index: -2;
-    overflow: hidden; /* Ensure content stays within modal */
+overflow: hidden; /* Ensure content stays within modal */
 }
 
 .close {
@@ -531,10 +531,10 @@ a {
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    
+
     width: auto;
     height: 250px;
-    overflow-y: auto; /* Enable vertical scrolling */
+overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .breed-info h2 {
@@ -553,14 +553,6 @@ a {
     font-weight: 400;
 }
 
-
-
-
-
-
-
-
-
 #breed-card-container {
     display: flex;
     flex-wrap: wrap; /* Ensure cards wrap to new lines */
@@ -570,7 +562,7 @@ a {
 }
 
 #breed-cards {
-    display: none;
+display: none;
     text-align: center;
     height: auto;
     padding: 5rem 4rem;

@@ -29,7 +29,7 @@ function populateBreedCards(category) {
 
     const breeds = {
         dog: ['Husky', 'Rottweiler', 'Golden Retriever', 'Shih Tzu'],
-        cat: ['Persian', 'Siamese', 'Maine Coon', 'Ragdoll'],
+        cat: ['British Shorthair', 'Siamese', 'Maine Coon', 'Ragdoll'],
         bird: ['Parrot', 'Canary', 'Finch', 'Eagle'],
         all: []
     };
@@ -94,13 +94,13 @@ function showBreedDetails(breed) {
         },
 
         //========================CATS================================
-        Persian: {
-            background: 'Assets/persian1.jpg',
-            image: 'Assets/persian2.jpg',
+        'British Shorthair': {
+            background: 'Assets/british1.jpg',
+            image: 'Assets/british2.jpg',
             description: 'Persian cats are quiet and sweet.'
         },
         Siamese: {
-            background: 'Assets/siamese1.jpg',
+            background: 'Assets/siamese1.png',
             image: 'Assets/siamese2.jpg',
             description: 'Siamese cats are social and vocal.'
         },
