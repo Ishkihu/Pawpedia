@@ -1,31 +1,19 @@
 function openModal(category) {
-    // Hide the category cards
     document.getElementById('library').style.display = 'none';
-    
-    // Show the breed cards section
     document.getElementById('breed-cards').style.display = 'block';
-    
-    // Show the navigation bar
     document.getElementById('category-nav').style.display = 'block';
-    
-    // Populate the breed cards based on the selected category
     populateBreedCards(category);
 }
 
 function returnToCategories() {
-    // Hide the breed cards section
     document.getElementById('breed-cards').style.display = 'none';
-    
-    // Show the category cards
     document.getElementById('library').style.display = 'block';
-    
-    // Hide the navigation bar
     document.getElementById('category-nav').style.display = 'none';
 }
 
 function populateBreedCards(category) {
     const breedCardContainer = document.getElementById('breed-card-container');
-    breedCardContainer.innerHTML = ''; // Clear existing cards
+    breedCardContainer.innerHTML = '';
 
     const breeds = {
         dog: ['Husky', 'Rottweiler', 'Golden Retriever', 'Shih Tzu'],
@@ -35,16 +23,12 @@ function populateBreedCards(category) {
     };
 
     let breedList = [];
-
-    // Get the appropriate breed list based on the category
     if (category === 'all') {
-        // Combine all categories and sort alphabetically
         breedList = [...breeds.dog, ...breeds.cat, ...breeds.bird, ...breeds.all];
     } else {
         breedList = breeds[category];
     }
 
-    // Sort the breed list alphabetically (case-insensitive)
     breedList.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
     // Generate the cards
@@ -75,7 +59,29 @@ function showBreedDetails(breed) {
         Husky: {
             background: 'Assets/husky1.jpg',
             image: 'Assets/husky2.jpg',
-            description: 'Labradors are friendly and outgoing dogs. Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.Labradors are friendly and outgoing dogs.'
+            description:`
+<pre><strong>Species: </strong>Canis lupus familiaris (Domestic Dog)
+<strong>Appearance: </strong>
+    Size: Medium-sized, typically weighing 35–60 pounds (16–27 kg) and standing 20–24 inches (51–61 cm) tall at the shoulder.
+    Coat: Dense, double-layered fur. The undercoat is soft and insulating, while the outer coat is straight and weather-resistant.
+    Color: Comes in a variety of colors, including black, white, gray, red, or a mix, often with striking patterns or markings.
+    Eyes: Almond-shaped eyes, often in striking blue, brown, or bi-colored combinations (heterochromia).
+    Ears: Upright, triangular ears with a slightly rounded tip.
+    Tail: A bushy, fox-like tail that curls over the back when alert.
+<strong>Traits: </strong> Canis lupus familiaris (Domestic Dog)
+    Athletic: Built for endurance, with a lean and muscular frame ideal for pulling sleds over long distances.
+    Adaptable: Thrives in cold climates but can adapt to milder environments with proper care.
+    Energetic: High energy levels make them excellent for active households or as working dogs.
+    Intelligent: Highly intelligent and capable of learning quickly, though they can also be independent and willful.
+<strong>Behavior: </strong> Canis lupus familiaris (Domestic Dog)
+    Friendly: Generally very social and good with families, including children.
+    Pack-Oriented: Enjoys the company of other dogs and thrives on teamwork.
+    Playful: Loves engaging in outdoor activities, games, and exercise.
+    Curious: Tends to explore, making a secure yard or leash essential.
+    Independent: While loyal, they are known for being stubborn and may require consistent training.
+    Vocal: Communicates through howling, whining, and "talking" rather than barking.
+</pre>
+            `
         },
         Rottweiler: {
             background: 'Assets/rottweiler1.jpg',
@@ -140,7 +146,7 @@ function showBreedDetails(breed) {
     document.getElementById('background-image').src = breedDetails[breed].background;
     document.getElementById('breed-image').src = breedDetails[breed].image;
     document.getElementById('breed-name').textContent = breed;
-    document.getElementById('breed-description').textContent = breedDetails[breed].description;
+    document.getElementById('breed-description').innerHTML = breedDetails[breed].description;
 
     document.getElementById('breed-modal').style.display = 'block';
 }
@@ -149,7 +155,6 @@ function closeBreedModal() {
     document.getElementById('breed-modal').style.display = 'none';
 }
 
-// Close the modal when clicking outside of the modal content
 window.onclick = function(event) {
     const modal = document.getElementById('breed-modal');
     if (event.target == modal) {

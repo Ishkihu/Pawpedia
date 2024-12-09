@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 /* HEADER */
 #about h2, #library h2, #gallery h2, #contact-section h1, #breed-cards h2{
     cursor: pointer;
@@ -290,21 +294,21 @@ a {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #ffffff; /* White background for the individual card */
+    background-color: #ffffff;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    transition: transform 0.3s, box-shadow 0.3s; /* Add smooth transition on hover */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 #about .grid-item:hover, #intro .intro-message:hover  {
-    transform: translateY(-10px); /* Slight lift effect on hover */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
 }
 
 #about .grid-item img {
-    max-width: 250px; /* Limit image size */
-    height: auto;
+    max-width: 400px; 
+    height: 400px;
     border-radius: 10px;
 }
 
@@ -525,7 +529,6 @@ overflow: hidden; /* Ensure content stays within modal */
 }
 
 .breed-image img {
-    max-width: auto;
     border-radius: 10px;
     object-fit: cover;
     width: 250px; 
@@ -542,10 +545,9 @@ overflow: hidden; /* Ensure content stays within modal */
     border-radius: 10px;
     padding: 1.5rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-
     width: auto;
     height: 250px;
-overflow-y: auto; /* Enable vertical scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 .breed-info h2 {
@@ -554,6 +556,7 @@ overflow-y: auto; /* Enable vertical scrolling */
     margin-bottom: 1rem;
     font-weight: bold;
     font-family: 'Impact', sans-serif;
+    letter-spacing: 2px;
 }
 
 .breed-info p {
@@ -566,9 +569,9 @@ overflow-y: auto; /* Enable vertical scrolling */
 
 #breed-card-container {
     display: flex;
-    flex-wrap: wrap; /* Ensure cards wrap to new lines */
-    justify-content: center; /* Align cards in the center */
-    gap: 2rem; /* Maintain the same gap between cards */
+    flex-wrap: wrap; 
+    justify-content: center;
+    gap: 2rem;
     transition: opacity 0.5s ease-in-out;
 }
 
@@ -791,4 +794,13 @@ footer a:hover {
 
 .modal-content2 form button:hover {
     background-color: #fc4c4c;
+}
+
+pre {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow: hidden; 
+    letter-spacing: -0.5px;
 }
