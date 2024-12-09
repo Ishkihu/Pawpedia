@@ -1,4 +1,3 @@
-Here's a detailed README file prompt for your "PawPedia" project:
 
 ---
 
