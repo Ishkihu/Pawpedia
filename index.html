@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
     <script src="script.js"></script>
     <title>PawPedia | Home</title>
 </head>
@@ -180,7 +181,55 @@
     </div>
 
     <section id="gallery" class="section-hidden">
-
+        <div class="post">
+            <div class="user-info">
+                <img src="Assets/parrot1.jpg" alt="User Image" class="user-image">
+                <span class="username">parrotbieker</span>
+                <img src="Assets/instavery.png" alt="Verified" class="verification-icon" height="20">
+                <span class="dot">•</span>
+                <span class="time-posted">1h</span>
+            </div>
+            <div class="image-carousel">
+                <div class="carousel-images">
+                    <img src="Assets/shihtzu1.jpg" alt="Post Image 1" class="post-image">
+                    <img src="Assets/shihtzu2.jpg" alt="Post Image 2" class="post-image">
+                    <img src="Assets/parrot1.jpg" alt="Post Image 3" class="post-image">
+                </div>
+                <button class="carousel-button left" onclick="prevImage()">&#10094;</button>
+                <button class="carousel-button right" onclick="nextImage()">&#10095;</button>
+            </div>
+            <div class="post-icons">
+                <div class="left-icons">
+                    <span class="icon heart-icon" onclick="toggleHeart(this)"><i class="fa fa-heart"></i></span>
+                    <span class="icon comment-icon" onclick="toggleComments(this)"><i class="fa fa-comment"></i></span>
+                    <span class="icon share-icon"><i class="fa fa-paper-plane"></i></span>
+                </div>
+                <span class="icon bookmark-icon"><i class="fa fa-bookmark"></i></span>
+            </div>
+            <div class="likes-count">
+                <p><span id="likes-number">123,451</span> likes</p>
+            </div>
+            <div class="post-caption">
+                <span class="username">parrotbieker</span>
+                <img src="Assets/instavery.png" alt="Verified" class="verification-icon" height="15" width="15">
+                <span>Mine mine, cutie</span>
+            </div>
+            <div class="view-comments" onclick="toggleComments(this)">
+                <p>View all <span id="comments-number">2</span> comments</p>
+            </div>
+            <div class="comments-section" style="display: none;">
+                <div class="comment">
+                    <img src="Assets/ragdoll1.jpg" alt="User1 Image" class="comment-user-image">
+                    <span class="comment-username">pawpaw</span>
+                    <p>Nice post!</p>
+                </div>
+                <div class="comment">
+                    <img src="Assets/paw.png" alt="User2 Image" class="comment-user-image">
+                    <span class="comment-username">purpur</span>
+                    <p>Love it!</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="connect" class="section-hidden">

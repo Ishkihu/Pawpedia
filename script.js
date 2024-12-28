@@ -177,7 +177,6 @@ window.onclick = function (event) {
     }
 };
 
-
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.getElementById('hamburger');
     const navLinks = document.getElementById('nav-links');
@@ -203,3 +202,42 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
 });
+
+
+function toggleHeart(element) {
+    element.classList.toggle('red');
+}
+
+function toggleComments(element) {
+    const commentsSection = element.closest('.post').querySelector('.comments-section');
+    if (commentsSection.style.display === 'none') {
+        commentsSection.style.display = 'block';
+    } else {
+        commentsSection.style.display = 'none';
+    }
+}
+
+
+let currentImageIndex = 0;
+
+function showImage(index) {
+    const images = document.querySelectorAll('.carousel-images .post-image');
+    const totalImages = images.length;
+    if (index >= totalImages) {
+        currentImageIndex = 0;
+    } else if (index < 0) {
+        currentImageIndex = totalImages - 1;
+    } else {
+        currentImageIndex = index;
+    }
+    const offset = -currentImageIndex * 100;
+    document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+}
+
+function nextImage() {
+    showImage(currentImageIndex + 1);
+}
+
+function prevImage() {
+    showImage(currentImageIndex - 1);
+}
